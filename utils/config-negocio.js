@@ -116,7 +116,7 @@ window.cargarConfiguracionNegocio = async function(forceRefresh = false) {
  */
 window.getNombreNegocio = async function() {
     const config = await window.cargarConfiguracionNegocio();
-    return config?.nombre || 'Cailc'Nails Liliana';
+    return config?.nombre || 'Cailc\'Nails Liliana';
 };
 
 /**
@@ -164,7 +164,7 @@ window.getHorarioAtencion = async function() {
  */
 window.getMensajeBienvenida = async function() {
     const config = await window.cargarConfiguracionNegocio();
-    return config?.mensaje_bienvenida || '¡Bienvenida a Cailc'Nails Liliana!';
+    return config?.mensaje_bienvenida || '¡Bienvenida a Cailc\'Nails Liliana!';
 };
 
 /**
@@ -205,5 +205,5 @@ setTimeout(async () => {
     await window.cargarConfiguracionNegocio();
 }, 500);
 
-console.log('✅ config-negocio.js listo para Cailc'Nails Liliana');
+console.log('✅ config-negocio.js listo para Cailc\'Nails Liliana');
 console.log('🏷️  ID configurado:', NEGOCIO_ID_POR_DEFECTO);
