@@ -1,22 +1,22 @@
-// sw.js - Service Worker para Salón mujer Virtuosa
+// sw.js - Service Worker para Cailc'Nails Liliana
 
-const CACHE_NAME = 'salonmujervirtuosa-v1';
+const CACHE_NAME = 'cailcnailsliliana-v1';
 const urlsToCache = [
-  '/salonmujervirtuosa/',
-  '/salonmujervirtuosa/index.html',
-  '/salonmujervirtuosa/admin.html',
-  '/salonmujervirtuosa/admin-login.html',
-  '/salonmujervirtuosa/setup-wizard.html',
-  '/salonmujervirtuosa/editar-negocio.html',
-  '/salonmujervirtuosa/manifest.json',
-  '/salonmujervirtuosa/icons/icon-72x72.png',
-  '/salonmujervirtuosa/icons/icon-96x96.png',
-  '/salonmujervirtuosa/icons/icon-128x128.png',
-  '/salonmujervirtuosa/icons/icon-144x144.png',
-  '/salonmujervirtuosa/icons/icon-152x152.png',
-  '/salonmujervirtuosa/icons/icon-192x192.png',
-  '/salonmujervirtuosa/icons/icon-384x384.png',
-  '/salonmujervirtuosa/icons/icon-512x512.png'
+  '/cailcnailsliliana/',
+  '/cailcnailsliliana/index.html',
+  '/cailcnailsliliana/admin.html',
+  '/cailcnailsliliana/admin-login.html',
+  '/cailcnailsliliana/setup-wizard.html',
+  '/cailcnailsliliana/editar-negocio.html',
+  '/cailcnailsliliana/manifest.json',
+  '/cailcnailsliliana/icons/icon-72x72.png',
+  '/cailcnailsliliana/icons/icon-96x96.png',
+  '/cailcnailsliliana/icons/icon-128x128.png',
+  '/cailcnailsliliana/icons/icon-144x144.png',
+  '/cailcnailsliliana/icons/icon-152x152.png',
+  '/cailcnailsliliana/icons/icon-192x192.png',
+  '/cailcnailsliliana/icons/icon-384x384.png',
+  '/cailcnailsliliana/icons/icon-512x512.png'
 ];
 
 // ============================================
@@ -108,7 +108,7 @@ self.addEventListener('fetch', event => {
           }
           // Si no hay cache y es imagen, devolver icon por defecto
           if (event.request.url.match(/\.(jpg|jpeg|png|gif|svg|webp)$/)) {
-            return caches.match('/salonmujervirtuosa/icons/icon-192x192.png');
+            return caches.match('/cailcnailsliliana/icons/icon-192x192.png');
           }
           return new Response('Error de red', { status: 408 });
         });
@@ -138,6 +138,6 @@ self.addEventListener('message', event => {
   }
 });
 
-console.log('✅ Service Worker configurado para Salón mujer Virtuosa');
+console.log('✅ Service Worker configurado para Cailc'Nails Liliana');
 console.log('📦 Cache:', CACHE_NAME);
 console.log('📄 Archivos a cachear:', urlsToCache.length);
