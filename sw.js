@@ -1,6 +1,6 @@
-// sw.js - Service Worker para Cailc'Nails Liliana
+// sw.js - Service Worker para Cailc\'Nails Liliana
 
-const CACHE_NAME = 'cailcnailsliliana-v25';
+const CACHE_NAME = 'cailcnailsliliana-v26';
 const urlsToCache = [
   '/cailcnailsliliana/',
   '/cailcnailsliliana/index.html',
@@ -139,6 +139,6 @@ self.addEventListener('message', event => {
   }
 });
 
-console.log('✅ Service Worker configurado para Cailc'Nails Liliana');
+console.log('✅ Service Worker configurado para Cailc\'Nails Liliana');
 console.log('📦 Cache:', CACHE_NAME);
 console.log('📄 Archivos a cachear:', urlsToCache.length);

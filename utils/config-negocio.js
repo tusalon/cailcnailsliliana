@@ -1,12 +1,12 @@
 // utils/config-negocio.js - VERSIÓN MULTI-TENANT CORREGIDA
-// CLIENTE: Cailc'Nails Liliana
+// CLIENTE: Cailc\'Nails Liliana
 
 console.log('🏢 config-negocio.js cargado');
 
 // ============================================
 // 🔥 CONFIGURACIÓN POR CLIENTE - ¡LO ÚNICO QUE CAMBIA!
 // ============================================
-const NEGOCIO_ID_POR_DEFECTO = '79fb5647-0c68-41d8-be77-9ad931bbdb49'; // ID de Cailc'Nails Liliana
+const NEGOCIO_ID_POR_DEFECTO = '79fb5647-0c68-41d8-be77-9ad931bbdb49'; // ID de Cailc\'Nails Liliana
 
 // Hacer accesible globalmente
 window.NEGOCIO_ID_POR_DEFECTO = NEGOCIO_ID_POR_DEFECTO;
@@ -28,18 +28,14 @@ let ultimaActualizacion = 0;
 const CACHE_DURATION = 2 * 60 * 1000; // 2 minutos
 
 /**
- * Obtiene el negocio_id del localStorage o usa el ID por defecto
+ * Obtiene el negocio_id propio de este cliente.
  */
 function getNegocioId() {
-    // 1. Prioridad: lo que haya en localStorage (cuando el admin se loguea)
     const localId = localStorage.getItem('negocioId');
-    if (localId) {
-        console.log('📌 Usando negocioId de localStorage:', localId);
-        return localId;
+    if (localId !== NEGOCIO_ID_POR_DEFECTO) {
+        localStorage.setItem('negocioId', NEGOCIO_ID_POR_DEFECTO);
     }
-    
-    // 2. Si no, usar el ID por defecto
-    console.log('📌 Usando negocioId por defecto (quemado en código):', NEGOCIO_ID_POR_DEFECTO);
+    console.log('📌 Usando negocioId del cliente:', NEGOCIO_ID_POR_DEFECTO);
     return NEGOCIO_ID_POR_DEFECTO;
 }
 
@@ -116,7 +112,7 @@ window.cargarConfiguracionNegocio = async function(forceRefresh = false) {
  */
 window.getNombreNegocio = async function() {
     const config = await window.cargarConfiguracionNegocio();
-    return config?.nombre || 'Cailc'Nails Liliana';
+    return config?.nombre || 'Cailc\'Nails Liliana';
 };
 
 /**
@@ -164,7 +160,7 @@ window.getHorarioAtencion = async function() {
  */
 window.getMensajeBienvenida = async function() {
     const config = await window.cargarConfiguracionNegocio();
-    return config?.mensaje_bienvenida || '¡Bienvenida a Cailc'Nails Liliana!';
+    return config?.mensaje_bienvenida || '¡Bienvenida a Cailc\'Nails Liliana!';
 };
 
 /**
@@ -205,5 +201,5 @@ setTimeout(async () => {
     await window.cargarConfiguracionNegocio();
 }, 500);
 
-console.log('✅ config-negocio.js listo para Cailc'Nails Liliana');
+console.log('✅ config-negocio.js listo para Cailc\'Nails Liliana');
 console.log('🏷️  ID configurado:', NEGOCIO_ID_POR_DEFECTO);
