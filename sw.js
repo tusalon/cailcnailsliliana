@@ -1,6 +1,6 @@
 // sw.js - Service Worker para Cailc\'Nails Liliana
 
-const CACHE_NAME = 'cailcnailsliliana-v29';
+const CACHE_NAME = 'cailcnailsliliana-v47';
 const urlsToCache = [
   '/cailcnailsliliana/',
   '/cailcnailsliliana/index.html',
@@ -17,7 +17,14 @@ const urlsToCache = [
   '/cailcnailsliliana/icons/icon-152x152.png',
   '/cailcnailsliliana/icons/icon-192x192.png',
   '/cailcnailsliliana/icons/icon-384x384.png',
-  '/cailcnailsliliana/icons/icon-512x512.png'
+  '/cailcnailsliliana/icons/icon-512x512.png',
+  '/cailcnailsliliana/vendor/react.production.min.js',
+  '/cailcnailsliliana/vendor/react-dom.production.min.js',
+  '/cailcnailsliliana/vendor/babel.min.js',
+  '/cailcnailsliliana/vendor/bcrypt.min.js',
+  '/cailcnailsliliana/vendor/tailwind-browser.js',
+  '/cailcnailsliliana/vendor/lucide/lucide.css',
+  '/cailcnailsliliana/vendor/lucide/lucide.woff2'
 ];
 
 // ============================================
